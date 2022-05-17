@@ -58,6 +58,9 @@ void* dequeue(Queue* queue){
 
   queue->front = front->link;
   free(front);
+  front->link && (queue->front = front->link); 
+  free(front);
+
   queue->count--;
 
   return data;
